@@ -1,5 +1,5 @@
 .size {
-  width: 1168px;
+  width: 1200px;
 }
 
 .header {
@@ -7,7 +7,7 @@
   justify-content: space-between;
   align-items: center;
 
-  width: 100vw;;
+  width: 100%;
   padding: 30px 0;
   margin-bottom: 40px;
 
@@ -53,7 +53,7 @@
   font-weight: 600;
   cursor: pointer;
   text-decoration: none;
-  color: white;
+  color: black;
   transition: all 100ms ease-in-out;
 }
 .header__container-left nav ul li a:hover {
@@ -103,7 +103,20 @@
   flex-direction: column;
   align-items: center;
 
-  gap: 24px;
+  gap: 15px;
+}
+.container>h1{
+  align-self: flex-start;
+  padding: 10px 15px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow:1px 1px 2px rgba(5, 4, 4, 0.2);
+
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+
+  background-color: #fe0178;
 }
 
 .input {
@@ -422,10 +435,138 @@
   display: none;
 }
 
-.container h1{
-  font-size: 20px;
-  align-self: flex-start;
-}
 .paginacao{
   margin-bottom: 30px;
+}
+.container-stream{
+  display: flex;
+  justify-content:space-between;
+  gap:10px;
+
+  margin-bottom: 30px;
+}
+.stream {
+  position: relative;
+  width: 197px;
+  height: 109px;
+  border-radius: 5px;
+
+  cursor: pointer;
+}
+.anime{
+  background: black url('../assets/stream/anime.png') center/cover;
+}
+.anime::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 1s ease;
+  box-shadow: 0 0 10px white inset;
+}
+.anime:hover::before{
+  box-shadow: 0 0 10px white inset;
+  opacity: 1;
+  background: url('../assets/stream/anime.gif') center/cover;
+}
+.disney{
+  background: black url('../assets/stream/disney.png') center/cover;
+}
+.disney::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 1s ease;
+  box-shadow: 0 0 10px white inset;
+}
+.disney:hover::before{
+  box-shadow: 0 0 10px white inset;
+  opacity: 1;
+  background: url('../assets/stream/disney.gif') center/contain no-repeat;
+}     
+.hbo{
+  background: black url('../assets/stream/hbo.png') center/contain no-repeat;
+  position: relative;
+}
+.hbo::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 1s ease;
+  box-shadow: 0 0 10px white inset;
+}
+.hbo:hover::before{
+  box-shadow: 0 0 10px white inset;
+  opacity: 1;
+  background: rgb(49, 48, 48) url('../assets/stream/hbo.png') center/cover no-repeat;
+}    
+
+.netflix{
+  background: black url('../assets/stream/netflix.png') center/contain no-repeat;
+}
+.netflix::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 1s ease;
+  box-shadow: 0 0 10px white inset;
+}
+.netflix:hover::before{
+  box-shadow: 0 0 10px white inset;
+  opacity: 1;
+  background: url('../assets/stream/netflix.gif') center/cover no-repeat;
+}    
+.marvel{
+  background: black url('../assets/stream/marvel.png') center/contain no-repeat;
+}
+.marvel::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 1s ease;
+  box-shadow: 0 0 10px white inset;
+}
+.marvel:hover::before{
+  box-shadow: 0 0 10px white inset;
+  opacity: 1;
+  background: url('../assets/stream/marvel.gif') center/cover no-repeat;
+}    
+
+.prime{
+  background: black url('../assets/stream/prime.png') center/cover no-repeat;
+}
+.prime::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 1s ease;
+  box-shadow: 0 0 10px white inset;
+}
+.prime:hover::before{
+  box-shadow: 0 0 10px white inset;
+  opacity: 1;
+  background: url('../assets/stream/prime.gif') center/contain no-repeat;
 }
