@@ -256,6 +256,7 @@ const p = document.querySelectorAll('p')
 const span = document.querySelectorAll('span')
 const header__title = document.querySelector('.header__title')
 const lupaPesquisar = document.querySelector('#lupa-pesquisar')
+const aMenuNav = document.querySelectorAll('.header__container-left nav ul li a')
 
 let darkModeOn;
 
@@ -273,6 +274,9 @@ luaBtn.addEventListener('click', () => {
             element.style.color = 'black'
         });
         span.forEach(element => {
+            element.style.color = 'black'
+        });
+        aMenuNav.forEach(element => {
             element.style.color = 'black'
         });
         header__title.style.color = '#fe0178'
@@ -304,6 +308,9 @@ luaBtn.addEventListener('click', () => {
             }
         });
         span.forEach(element => {
+            element.style.color = 'white'
+        });
+        aMenuNav.forEach(element => {
             element.style.color = 'white'
         });
         body.style.backgroundColor = '#1B2028'
