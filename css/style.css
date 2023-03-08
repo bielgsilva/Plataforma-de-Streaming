@@ -94,7 +94,8 @@
 
   color: #fe0178; 
   text-transform: uppercase; 
-  letter-spacing: 3px; 
+  letter-spacing: 2px; 
+
   text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3); 
 }
 
@@ -107,16 +108,18 @@
 }
 .container>h1{
   align-self: flex-start;
-  padding: 10px 15px;
-  border-radius: 25px;
+  padding: 13px 18px;
+  border-radius: 25px 25px 0px 0;
+margin-bottom: -15px;
+
   font-size: 14px;
   font-weight: 500;
   box-shadow:1px 1px 2px rgba(5, 4, 4, 0.2);
 
   text-transform: uppercase;
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
 
-  background-color: #fe0178;
+  background-color: #fe01778f;
 }
 
 .input {
@@ -157,6 +160,7 @@
 .movies-container,
 .movies {
   display: flex;
+  justify-content: center;
   gap: 16px;
 }
 
