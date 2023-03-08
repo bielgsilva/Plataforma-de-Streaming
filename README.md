@@ -2,7 +2,7 @@
 Este projeto é uma plataforma de streaming de filmes que possui recursos como visualização de filmes, paginação, busca de filmes, exibição do "Filme do dia", modal de filme e mudança de tema.
 
 ## Como Visualizar o Projeto
-Para apenas visualizar o projeto, clique nesse link a seguir: <a href='https://urban-adventure-z72mkpk.pages.github.io/'> AQUI </a>
+Para apenas visualizar o projeto, clique nesse link a seguir: <a href='https://bielgsilva.github.io/Plataforma-de-Streaming/'> AQUI </a>
 
 ## Como Executar o Projeto
 Para executar este projeto, siga os seguintes passos:
