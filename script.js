@@ -168,7 +168,10 @@ async function abrirModal(id) {
     const overview = document.querySelector('.modal__description')
     const modalImg = document.querySelector('.modal__img')
     const modalGenres = document.querySelector('.modal__genres')
+    const header = document.querySelector('header')
     let genres
+
+    header.style.display = 'none'
 
     genres = dataModal.genres
 
@@ -193,11 +196,13 @@ async function abrirModal(id) {
 
     btnClose.addEventListener('click', () => {
         hidden.style.display = 'none'
+        header.style.display = 'flex'
     })
 
     modal.addEventListener('click', function (event) {
         if (event.target.matches('.modal')) {
             hidden.style.display = 'none';
+            header.style.display = 'flex'
         }
     });
 }
@@ -262,7 +267,6 @@ const aMenuNav = document.querySelectorAll('.header__container-left nav ul li a'
 
 let darkModeOn;
 
-
 luaBtn.addEventListener('click', () => {
     if (darkModeOn === true) {
         darkModeOn = false
@@ -298,7 +302,6 @@ luaBtn.addEventListener('click', () => {
     } else {
         darkModeOn = true
         localStorage.setItem('darkMode', 'true');
-
 
         h1.forEach(element => {
             element.style.color = 'white'
