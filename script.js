@@ -38,6 +38,7 @@ async function filmesDaSemana(page) {
 
         const title = document.createElement('span')
         title.classList.add('movie__title')
+
         const vote_average = document.createElement('span')
         vote_average.classList.add('movie__rating')
 
@@ -56,7 +57,7 @@ async function filmesDaSemana(page) {
         })
     });
 
-    paginacao.style.fontSize = '22px'
+    paginacao.style.fontSize = '15px'
     paginacao.textContent = `Página: ${paginacaoAtual} de ${ListaDeFilmes.length}`
 }
 
@@ -132,6 +133,7 @@ async function pesquisarFilme(page) {
 
         const title = document.createElement('span')
         title.classList.add('movie__title')
+
         const vote_average = document.createElement('span')
         vote_average.classList.add('movie__rating')
 
@@ -279,7 +281,7 @@ luaBtn.addEventListener('click', () => {
         aMenuNav.forEach(element => {
             element.style.color = 'black'
         });
-        header__title.style.color = '#fe0178'
+        header__title.style.color = '#e21221'
         body.style.backgroundColor = 'white'
         header.style.backgroundColor = 'white'
         moviesContainer.style.backgroundColor = 'var(--bg-secondary)'
@@ -377,4 +379,122 @@ document.addEventListener("visibilitychange", function () {
 });
 
 
+const contFlex = document.querySelector('.container-hp')
+const itens = document.querySelectorAll('.item')
+let hpFilmes = []
+
+async function filmesHP() {
+    const hpID = []
+    const pesquisado = 'Shrek'
+
+    const response = await api.get(`https://tmdb-proxy.cubos-academy.workers.dev/3/search/movie?language=pt-BR&include_adult=false&query=${pesquisado}`);
+
+    const TodosOsFilmesImportados = response.data.results;
+
+    hpFilmes.push(TodosOsFilmesImportados.slice(0, 5));
+
+    const pgCom8Filmes = hpFilmes[0];
+
+    pgCom8Filmes.forEach(function (movie) {
+        hpID.push(movie.id);
+
+        const movieHP = document.createElement('div')
+        movieHP.classList.add('movie-hp')
+        contFlex.appendChild(movieHP)
+
+        const divMovieInfo = document.createElement('div')
+        divMovieInfo.classList.add('hp-movie__info')
+
+        const title = document.createElement('span')
+        title.classList.add('hp-movie__title')
+
+        const vote_average = document.createElement('span')
+        vote_average.classList.add('hp-movie__rating')
+
+        const btnPlay = document.createElement('img')
+        btnPlay.src = "./assets/play.svg"
+
+        movieHP.appendChild(divMovieInfo)
+        movieHP.style.backgroundImage = `url(${movie.poster_path})`;
+        movieHP.style.backgroundSize = 'cover'
+        movieHP.style.backgroundRepeat = 'no-repeat'
+
+        title.textContent = movie.original_title
+        vote_average.textContent = movie.vote_average.toFixed(2)
+
+        divMovieInfo.appendChild(title)
+        divMovieInfo.appendChild(vote_average)
+
+        // movieHP.addEventListener('click', () => {
+        //     abrirModal(movie.id)
+        // })
+
+        movieHP.addEventListener("mouseover", function () {
+            movieHP.style.flex = '2'
+            movieHP.style.backgroundImage = `url(${movie.backdrop_path})`;
+            movieHP.style.backgroundSize = 'cover'
+            movieHP.style.backgroundRepeat = 'no-repeat'
+            title.style.whiteSpace = 'normal'
+            title.style.maxWidth = '200px'
+
+            divMovieInfo.innerHTML = ''
+            divMovieInfo.appendChild(title)
+            divMovieInfo.appendChild(btnPlay)
+
+            btnPlay.style.width = '520px'
+            btnPlay.style.height = '50px'
+            divMovieInfo.style.height = '100%'
+            divMovieInfo.style.backgroundColor = 'rgba(0, 0, 0, 0.4)'
+            divMovieInfo.style.flexDirection = 'column'
+            divMovieInfo.style.justifyContent = 'center'
+            title.style.position = 'absolute'
+            title.style.marginBottom = '250px'
+            title.style.fontSize = '25px'
+            title.style.textAlign = 'center'
+
+            async function filmeYTB() {
+                let responseVideo = await api.get(`/movie/${movie.id}/videos?language=en`);
+
+                let video = responseVideo.data.results;
+
+                let trailer = video.filter(temTrailerNoNome)
+
+                /*fnc callback*/
+                function temTrailerNoNome(objeto) {
+                    return objeto.name.includes('Trailer');
+                }
+
+                movieHP.addEventListener('click', () => {
+                    window.location.href = `https://www.youtube.com/watch?v=${trailer[0].key}`
+                })
+            }
+            filmeYTB()
+
+        });
+        movieHP.addEventListener("mouseout", function () {
+            movieHP.style.flex = '1'
+            movieHP.style.backgroundImage = `url(${movie.poster_path})`;
+            movieHP.style.backgroundSize = 'cover'
+            movieHP.style.backgroundRepeat = 'no-repeat'
+            title.style.whiteSpace = 'nowrap'
+            title.style.maxWidth = '100px'
+
+            divMovieInfo.innerHTML = ''
+            divMovieInfo.appendChild(title)
+            divMovieInfo.appendChild(vote_average)
+
+            divMovieInfo.style.height = 'auto'
+            divMovieInfo.style.backgroundColor = 'rgba(0, 0, 0, 0.9)'
+            divMovieInfo.style.flexDirection = 'row'
+            divMovieInfo.style.justifyContent = 'space-between'
+            title.style.position = 'static'
+            title.style.marginBottom = '0'
+            title.style.fontSize = '16px'
+            title.style.textAlign = 'none'
+
+        });
+    });
+
+}
+filmesHP()
 
