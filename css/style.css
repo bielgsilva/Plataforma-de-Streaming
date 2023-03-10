@@ -23,20 +23,21 @@ header {
   max-height: 60px;
   padding: 30px 2%;
   margin-bottom: 40px;
+
+  border-bottom: 2px solid #999;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
   background-color: white;
 }
-
-
-header img {
+header img{
   width: 25px;
   height: 25px;
-  margin-right: 20px;
   cursor: pointer;
+  margin-right: 10px;
 }
-/* #lupa-pesquisar{
-  width: 40px;
+
+.header__container-right img {
   margin-right: 20px;
-} */
+}
 
 .header__container-logo {
   display: flex;
@@ -51,7 +52,6 @@ header img {
   font-size: 32px;
   line-height: 38px;
 }
-
 .header__container-left {
   display: flex;
   justify-content: center;
@@ -67,16 +67,15 @@ header img {
   text-decoration: none;
 }
 .header__container-left nav ul li a{
-  font-weight: 600;
+  font-size: 13px;
+  font-weight: 500;
   cursor: pointer;
   text-decoration: none;
   color: black;
-  transition: all 100ms ease-in-out;
 }
 .header__container-left nav ul li a:hover {
   text-decoration: underline;
 }
-
 .header__container-right {
   display: flex;
   align-items: center;
@@ -85,15 +84,27 @@ header img {
   width: 25%;
   min-height: 50px;
   padding: 0 2%;
-}
 
+}
 .header__container-right input {
+  max-height: 35px;
   margin-right: 10px;
   margin-left: -10px;
   align-items: center;
 
 }
 
+.header__title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+
+  color: #e21221; 
+  text-transform: uppercase; 
+  letter-spacing: 2px; 
+
+  text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3); 
+}
 .btn-theme {
   cursor: pointer;
 }
@@ -101,18 +112,41 @@ header img {
 .btn-theme:hover {
   opacity: 0.9;
 }
+.menu-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  position: fixed;
+  top: 9.2%;
+  right: 0;
 
-.header__title {
-  font-style: normal;
-  font-weight: bold;
-  font-size: 30px;
-  line-height: 150%;
+  height: 45%;
+  width: 30%;
+  padding: 5%;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+  
+  color: white;
+  background-color: #000000ee;
+  z-index: 11;
+  
+  transition: left 1s ease-in-out;
+}
+.menu-nav a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  margin-bottom: 10px;
+  padding: 10px;
+  display: block;
+}
+.icon-link{
+  display: inline-block;
 
-  color: #e21221; 
-  text-transform: uppercase; 
-  letter-spacing: 2px; 
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
 
-  text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3); 
 }
 
 .container {

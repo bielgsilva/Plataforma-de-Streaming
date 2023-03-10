@@ -23,7 +23,6 @@ async function filmesDaSemana(page) {
 
     const pgCom6Filmes = ListaDeFilmes[paginacaoAtual - 1];
 
-
     containerMovies.innerHTML = '';
 
     pgCom6Filmes.forEach(function (movie) {
@@ -63,44 +62,6 @@ async function filmesDaSemana(page) {
 
 filmesDaSemana(paginacaoAtual);
 
-btnPrev.addEventListener('click', () => {
-    if (paginacaoAtual > 1) {
-        if (!verificacaoDePesquisa) {
-            filmesDaSemana(paginacaoAtual - 1);
-        } else {
-            pesquisarFilme(paginacaoAtual - 1);
-
-        }
-    }
-})
-btnNext.addEventListener('click', () => {
-
-    if (paginacaoAtual < 3) {
-        if (!verificacaoDePesquisa) {
-            filmesDaSemana(paginacaoAtual + 1);
-        } else {
-            pesquisarFilme(paginacaoAtual + 1);
-
-        }
-    }
-})
-
-const input = document.querySelector('.input');
-
-input.addEventListener('keydown', (event) => {
-    const h1Search = document.querySelector('.container h1')
-
-    if (event.key === 'Enter') {
-        h1Search.textContent = `Você pesquisou por "${input.value}"`
-        event.preventDefault();
-        paginacaoAtual = 1;
-        teste = []
-        pesquisarFilme(paginacaoAtual);
-        input.value = ''
-        verificacaoDePesquisa = true
-    }
-});
-
 async function pesquisarFilme(page) {
     const idMovies = []
     const pesquisado = input.value.trim();
@@ -113,11 +74,9 @@ async function pesquisarFilme(page) {
     teste.push(TodosOsFilmesImportados.slice(6, 12));
     teste.push(TodosOsFilmesImportados.slice(12, 18));
 
-
     paginacaoAtual = page;
 
     let pgCom6Filmes = teste[paginacaoAtual - 1];
-
 
     containerMovies.innerHTML = '';
 
@@ -156,6 +115,42 @@ async function pesquisarFilme(page) {
     paginacao.textContent = `Página: ${paginacaoAtual} de ${ListaDeFilmes.length}`
 }
 
+btnPrev.addEventListener('click', () => {
+    if (paginacaoAtual > 1) {
+        if (!verificacaoDePesquisa) {
+            filmesDaSemana(paginacaoAtual - 1);
+        } else {
+            pesquisarFilme(paginacaoAtual - 1);
+
+        }
+    }
+})
+btnNext.addEventListener('click', () => {
+
+    if (paginacaoAtual < 3) {
+        if (!verificacaoDePesquisa) {
+            filmesDaSemana(paginacaoAtual + 1);
+        } else {
+            pesquisarFilme(paginacaoAtual + 1);
+        }
+    }
+})
+
+const input = document.querySelector('.input');
+
+input.addEventListener('keydown', (event) => {
+    const h1Search = document.querySelector('.container h1')
+
+    if (event.key === 'Enter') {
+        h1Search.textContent = `Você pesquisou por "${input.value}"`
+        event.preventDefault();
+        paginacaoAtual = 1;
+        teste = []
+        pesquisarFilme(paginacaoAtual);
+        input.value = ''
+        verificacaoDePesquisa = true
+    }
+});
 
 async function abrirModal(id) {
     const hidden = document.querySelector('.hidden');
@@ -232,6 +227,7 @@ async function mostrarInfoFilmeDoDia() {
     overview.textContent = filmeDoDia.overview
     linkVideo.href = `https://www.youtube.com/watch?v=${videoDoDia[1].key}`
 
+    // highlightGenres.textContent = movieData.genres.map((genre) => genre.name).join(', ');
     const genres = document.querySelector('.highlight__genres')
     const genresAr = filmeDoDia.genres
     const genresStr = JSON.stringify(genresAr)
@@ -251,11 +247,10 @@ async function mostrarInfoFilmeDoDia() {
 
 mostrarInfoFilmeDoDia();
 
-
-const luaBtn = document.querySelector('.btn-theme')
-const logo = document.querySelector('#logo')
 const body = document.querySelector('body')
 const header = document.querySelector('header')
+const logo = document.querySelector('#logo')
+const luaBtn = document.querySelector('.btn-theme')
 const moviesContainer = document.querySelector('.movies-container')
 const highlight = document.querySelector('.highlight')
 const h1 = document.querySelectorAll('h1')
@@ -264,6 +259,10 @@ const span = document.querySelectorAll('span')
 const header__title = document.querySelector('.header__title')
 const lupaPesquisar = document.querySelector('#lupa-pesquisar')
 const aMenuNav = document.querySelectorAll('.header__container-left nav ul li a')
+const containerHp = document.querySelector('.container-hp')
+
+const btnMenu = document.querySelector('.btn-menu')
+const menuNav = document.querySelector('.menu-nav')
 
 let darkModeOn;
 
@@ -290,11 +289,13 @@ luaBtn.addEventListener('click', () => {
         header.style.backgroundColor = 'white'
         moviesContainer.style.backgroundColor = 'var(--bg-secondary)'
         highlight.style.backgroundColor = 'var(--bg-secondary)'
+        containerHp.style.backgroundColor = 'var(--bg-secondary)'
         logo.src = "./assets/logo-dark.png"
         luaBtn.src = "./assets/light-mode.svg"
         btnNext.src = "./assets/arrow-right-dark.svg"
         btnPrev.src = "./assets/arrow-left-dark.svg"
 
+        btnMenu.src = "./assets/menu-preto.png"
         lupaPesquisar.src = "./assets/lupa-preta.png"
         input.style.color = 'black'
         input.style.borderColor = 'black'
@@ -322,6 +323,7 @@ luaBtn.addEventListener('click', () => {
         header.style.backgroundColor = '#1B2028'
         moviesContainer.style.backgroundColor = '#2D3440'
         highlight.style.backgroundColor = '#2D3440'
+        containerHp.style.backgroundColor = '#2D3440'
         logo.src = "./assets/logo-dark.png"
         luaBtn.src = "./assets/dark-mode.svg"
         btnNext.src = "./assets/arrow-right-light.svg"
@@ -329,6 +331,7 @@ luaBtn.addEventListener('click', () => {
 
         input.style.color = 'white'
         input.style.borderColor = 'white'
+        btnMenu.src = "./assets/menu-branco.png"
         lupaPesquisar.src = "./assets/lupa-branca.png"
     }
 
@@ -501,3 +504,7 @@ async function filmesHP() {
 }
 filmesHP()
 
+
+btnMenu.addEventListener("click", () => {
+    menuNav.classList.toggle("hide");
+})
