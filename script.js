@@ -41,6 +41,9 @@ async function filmesDaSemana(page) {
         const vote_average = document.createElement('span')
         vote_average.classList.add('movie__rating')
 
+        const movieStar = document.createElement('img')
+        movieStar.src = "./assets/estrela.svg"
+
         divMovie.appendChild(divMovieInfo)
         divMovie.style.backgroundImage = `url(${movie.poster_path})`;
         divMovie.style.backgroundSize = 'cover'
@@ -50,6 +53,7 @@ async function filmesDaSemana(page) {
 
         divMovieInfo.appendChild(title)
         divMovieInfo.appendChild(vote_average)
+        vote_average.appendChild(movieStar)
 
         divMovie.addEventListener('click', () => {
             abrirModal(movie.id)
@@ -96,18 +100,21 @@ async function pesquisarFilme(page) {
         const vote_average = document.createElement('span')
         vote_average.classList.add('movie__rating')
 
+        const movieStar = document.createElement('img')
+        movieStar.src = "./assets/estrela.svg"
+
         divMovie.appendChild(divMovieInfo)
         divMovie.style.backgroundImage = `url(${movie.poster_path})`;
         divMovie.style.backgroundSize = 'cover'
 
         title.textContent = movie.original_title
-        vote_average.textContent = movie.vote_average
+        vote_average.textContent = movie.vote_average.toFixed(1)
 
         divMovieInfo.appendChild(title)
+        vote_average.appendChild(movieStar)
         divMovieInfo.appendChild(vote_average)
 
         divMovie.addEventListener('click', () => {
-
             abrirModal(movie.id)
         })
     });
@@ -426,14 +433,10 @@ async function filmesHP() {
         movieHP.style.backgroundRepeat = 'no-repeat'
 
         title.textContent = movie.original_title
-        vote_average.textContent = movie.vote_average.toFixed(2)
+        vote_average.textContent = movie.vote_average.toFixed(1)
 
         divMovieInfo.appendChild(title)
         divMovieInfo.appendChild(vote_average)
-
-        // movieHP.addEventListener('click', () => {
-        //     abrirModal(movie.id)
-        // })
 
         movieHP.addEventListener("mouseover", function () {
             movieHP.style.flex = '2'
