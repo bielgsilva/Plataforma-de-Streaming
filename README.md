@@ -1,10 +1,16 @@
 # Projeto de Plataforma de Streaming
 Este projeto é uma plataforma de streaming de filmes que possui recursos como visualização de filmes, paginação, busca de filmes, exibição do "Filme do dia", modal de filme e mudança de tema.
 
-## Como Visualizar o Projeto
+1. <a href='#visuProjeto'>Como Visualizar o Projeto </a> <br>
+2. <a href='#execProjeto'>Como Executar o Projeto</a><br>
+3. <a href='#funcionalidades'>Funcionalidades da Plataforma de Streaming</a><br>
+4. <a href='#tec'>Tecnologias Utilizadas</a><br>
+5. <a href='#tec'>Imagens do Projeto</a><br>
+
+## <h2 id='visuProjeto'>Como Visualizar o Projeto</h2>
 Para apenas visualizar o projeto, clique nesse link a seguir: <a href='https://bielgsilva.github.io/Plataforma-de-Streaming/'> AQUI </a>
 
-## Como Executar o Projeto
+## <h2 id='execProjeto'>Como Executar o Projeto</h2>
 Para executar este projeto, siga os seguintes passos:
 
 1. Clone este repositório em sua máquina local:
@@ -14,7 +20,7 @@ git clone git@github.com:bielgsilva/Plataforma-de-Streaming---CubosFlix.git
 
 3. Abra o arquivo index.html em seu navegador
 
-## Funcionalidades da Plataforma de Streaming
+## <h2 id='funcionalidades'>Funcionalidades da Plataforma de Streaming</h2>
 ### • Recomendações da Semana
 A plataforma possui uma interface que permite a visualização de filmes recomendendados semanalmente. 
 
@@ -33,12 +39,13 @@ Ao clicar em um filme, seja da recomedação da semana ou pesquisado, abrirá um
 ### • Mudança de Tema
 O usuário pode escolher entre dois temas: claro e escuro. A mudança de tema é feita através de um botão na barra de navegação. Esse tema ficará salvo no localStorage para que quando se for retornado ao site o seu tema de preferência já esteja pre selecionado.
 
-## Tecnologias Utilizadas e Imagens do Projeto
+##  <h2 id='tec'>Tecnologias Utilizadas</h2>
 #### HTML
 #### CSS
 #### JavaScript
 #### API
-<br><br><br>
+
+##  <h2 id='img'>Imagens do Projeto</h2>
 • Recomendações da Semana
 ![image](https://user-images.githubusercontent.com/106818201/223436159-c0ffd3c2-399c-4be7-b8ad-68a5901ecc48.png)
 <br><br>
