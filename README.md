@@ -47,20 +47,28 @@ O usuário pode escolher entre dois temas: claro e escuro. A mudança de tema é
 
 ##  <h2 id='img'>Imagens do Projeto</h2>
 • Recomendações da Semana
-![image](https://user-images.githubusercontent.com/106818201/223436159-c0ffd3c2-399c-4be7-b8ad-68a5901ecc48.png)
-<br><br>
-• Paginação de Filmes
-![image](https://user-images.githubusercontent.com/106818201/223437797-0a6294b7-ea64-444b-b9e5-88dc7b3e0ce0.png)
+![image](https://user-images.githubusercontent.com/106818201/224989759-97238a2b-3f68-4259-ac1a-bfa6a4a198b2.png)
 <br><br>
 • Busca de Filmes
-![image](https://user-images.githubusercontent.com/106818201/223436955-1d9feb30-ff2f-424c-b57f-e41e17bf110b.png)
+![image](https://user-images.githubusercontent.com/106818201/224990178-3a210f3d-0ff3-4b80-abcc-c32134bb982f.png)
+<br><br>
+• Categorias
+![image](https://user-images.githubusercontent.com/106818201/224989960-3e7ecf71-3166-4dd3-b294-5c43984d94ee.png)
 <br><br>
 • Filme do Dia
-![image](https://user-images.githubusercontent.com/106818201/223436409-430da426-f2c5-41dc-8c50-d4a6d71f6e61.png)
+![image](https://user-images.githubusercontent.com/106818201/224990396-37c4eabe-bd80-4178-9e6d-34798e9708b9.png)
 <br><br>
 • Modal de Filmes
 ![image](https://user-images.githubusercontent.com/106818201/223436717-6a38b7b3-d3fe-472f-a8b5-41d58137bfde.png)
 <br><br>
 • Mudança de Tema
-![image](https://user-images.githubusercontent.com/106818201/223436815-117da104-924e-4f74-af57-300452954f46.png)
+![image](https://user-images.githubusercontent.com/106818201/224990624-12217064-fbdc-4b3b-abdd-53e6bb601d31.png)
+<br><br>
+• Especial Shrek
+![image](https://user-images.githubusercontent.com/106818201/224990767-21553150-668f-49b4-8035-05f66409f861.png)
+![image](https://user-images.githubusercontent.com/106818201/224990843-fc898946-0e15-4019-8168-f470b04977d5.png)
+<br><br>
+• Especial DC
+![image](https://user-images.githubusercontent.com/106818201/224990945-314ebf20-58a3-4644-a46d-87c4dc6a19d7.png)
+![image](https://user-images.githubusercontent.com/106818201/224991013-e9a57ad3-a625-4fd6-a5a4-49a339515b1a.png)
 <br><br>
