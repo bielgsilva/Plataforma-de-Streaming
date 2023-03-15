@@ -44,6 +44,7 @@ O usuário pode escolher entre dois temas: claro e escuro. A mudança de tema é
 #### CSS
 #### JavaScript
 #### API
+#### Axios
 
 ##  <h2 id='img'>Imagens do Projeto</h2>
 • Recomendações da Semana
