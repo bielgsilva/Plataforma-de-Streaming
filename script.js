@@ -149,6 +149,14 @@ input.addEventListener('keydown', (event) => {
     const h1Search = document.querySelector('.container h1')
 
     if (event.key === 'Enter') {
+        let pesquisado = input.value
+        if (pesquisado === '') {
+            filmesDaSemana(paginacaoAtual);
+            h1Search.textContent = 'RECOMENDAÇÕES DA SEMANA'
+
+            return
+        }
+
         h1Search.textContent = `Você pesquisou por "${input.value}"`
         event.preventDefault();
         paginacaoAtual = 1;
